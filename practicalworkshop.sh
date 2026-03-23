@@ -7,3 +7,4 @@ gpg --armor --export beltranartfire@hotmail.com > mi_llave_publica.asc      #Exp
 cat mi_llave_publica.asc        #Muestra el contenido de la clave pública en pantalla
 gpg --list-secret-keys --keyid-format=long      #Lista tus claves privadas con identificadores largos
 gpg --armor --export-secret-keys        #Exporta tus claves privadas en formato texto (uso delicado)
+gpg --import INGE_llave_publica.asc     #Importa la llave publica de alguien mas 
