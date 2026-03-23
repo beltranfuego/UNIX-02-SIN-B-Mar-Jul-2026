@@ -8,3 +8,4 @@ cat mi_llave_publica.asc        #Muestra el contenido de la clave pública en pa
 gpg --list-secret-keys --keyid-format=long      #Lista tus claves privadas con identificadores largos
 gpg --armor --export-secret-keys        #Exporta tus claves privadas en formato texto (uso delicado)
 gpg --import INGE_llave_publica.asc     #Importa la llave publica de alguien mas 
+echo "hola webitas lol xd uwu zzz" > doc_no_cifrado.txt   #"Muestra con echo el mensaje, y lo crea en un documento nuevo"
