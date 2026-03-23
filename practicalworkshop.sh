@@ -9,3 +9,9 @@ gpg --list-secret-keys --keyid-format=long      #Lista tus claves privadas con i
 gpg --armor --export-secret-keys        #Exporta tus claves privadas en formato texto (uso delicado)
 gpg --import INGE_llave_publica.asc     #Importa la llave publica de alguien mas 
 echo "hola webitas lol xd uwu zzz" > doc_no_cifrado.txt   #"Muestra con echo el mensaje, y lo crea en un documento nuevo"
+gpg --output doc_para_inge.txt --encrypt --recipient "hash o correo de la persona" doc_no_cifrado.txt       
+#Cifra el archivo usando la clave pública del destinatario y genera un archivo encriptado que solo esa persona puede descifrar
+#output especifica el nombre del archivo donde se guardará el resultado del comando
+gpg --decrypt doc_cifrado.txt       #desenecripta 
+gpg --output doc_no_cifrado_firmado.txt --clearsign doc_no_cifrado.txt
+cat doc_no_cifrado_firmado.txt
