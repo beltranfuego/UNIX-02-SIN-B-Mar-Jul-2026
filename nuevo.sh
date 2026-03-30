@@ -13,3 +13,5 @@ sudo parted -l && echo -e "\n---\n" && lsblk -f && echo -e "\n---\n"
 #&&   Runs the next command **only if the condition is true**
 #echo "UEFI"  Prints **UEFI** if the directory exists
 # ||   Runs the next command **if the previous one fails**
+echo "esto es un archivo" > archivo.txt #Creates a file called `archivo.txt` and writes the textb "esto es un archivo"
+stat archivo.txt #Displays detailed information about the file.
