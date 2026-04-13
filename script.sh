@@ -9,3 +9,5 @@ ls -l -ah    #Same as above, just grouping flags
 ls -lah     #Same again, all flags combined in one
 mkdir -- -rf    #Creates a directory literally named -rf    -- end of options (treats whats next not as a flag)
 rmdir -- -rf    #Removes a directory literally named -rf
+ls --help   #Displays the help message for ls, showing its syntax, options, and basic usage.
+man ls  #Opens the manual page for ls, with detailed documentation and explanations of all options.
