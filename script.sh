@@ -11,3 +11,6 @@ mkdir -- -rf    #Creates a directory literally named -rf    -- end of options (t
 rmdir -- -rf    #Removes a directory literally named -rf
 ls --help   #Displays the help message for ls, showing its syntax, options, and basic usage.
 man ls  #Opens the manual page for ls, with detailed documentation and explanations of all options.
+--depth  #Create a shallow clone with a history truncated to the specified number of commits. Implies --single-branch unless
+        # --no-single-branch is given to fetch the histories near the tips of all branches. If you want to clone submodules shallowly, also
+        #   pass --shallow-submodules.
