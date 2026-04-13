@@ -1,3 +1,9 @@
 ls -a #Shows all files in the current directory, including hidden ones (those starting with .)
 ls --all   #Does exactly the same as -a (it’s just the long version of the option)
 ls -a / #Lists all files in the root directory /, including hidden system files
+ls -l -a -h #Lists files with:
+#-l long format (permissions, owner, size, date)
+#-a include hidden files
+#-h human-readable sizes (KB, MB, etc.)
+ls -l -ah    #Same as above, just grouping flags
+ls -lah     #Same again, all flags combined in one
