@@ -11,3 +11,5 @@ ls -l hola.sh
 ls /etc
 touch /etc/prueba.txt   #Creates an empty file named prueba.txt inside the /etc directory, if permissions allow it. 
 #If the file already exists, touch updates its modification timestamp instead.
+mkdir ~/mi_carpeta      #creates a new directory called mi_carpeta inside the current user's home folder.
+apt install cowsay      #installs the cowsay package using the apt package manager, if the system is Debian-based and permissions are available.
