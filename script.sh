@@ -20,3 +20,6 @@ chmod o+r script.sh #Adds read permission for others (everyone except owner and 
 chmod u+rw,go-rwx script.sh     #Sets permissions like this: u+rw → user: read + write go-rwx → group & others: no permissions
 sudo echo "hola" > /etc/archivo_protegido   #Permission dennied because sudo only works for "echo" and /etc requires another 
 #sudo permission 
+echo "hola" | sudo tee /etc/archivo_protegido > /dev/null   #Writes "hola" to a protected file using sudo, but suppresses the output in the terminal.
+echo "hola" | sudo tee /etc/archivo_protegido   #Writes "hola" to a protected file using sudo and also prints it to the terminal.
+
