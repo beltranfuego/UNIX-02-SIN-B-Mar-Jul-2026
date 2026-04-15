@@ -8,3 +8,6 @@ ls -l hola.sh   #shows detailed information about the file, such as its permissi
 chmod +x hola.sh    #gives execute permission to the file, allowing it to be run as a script.
 ls -l hola.sh
 ./hola.sh   #now it executes
+ls /etc
+touch /etc/prueba.txt   #Creates an empty file named prueba.txt inside the /etc directory, if permissions allow it. 
+#If the file already exists, touch updates its modification timestamp instead.
