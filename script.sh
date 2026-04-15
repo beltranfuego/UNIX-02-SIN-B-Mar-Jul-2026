@@ -22,4 +22,4 @@ sudo echo "hola" > /etc/archivo_protegido   #Permission dennied because sudo onl
 #sudo permission 
 echo "hola" | sudo tee /etc/archivo_protegido > /dev/null   #Writes "hola" to a protected file using sudo, but suppresses the output in the terminal.
 echo "hola" | sudo tee /etc/archivo_protegido   #Writes "hola" to a protected file using sudo and also prints it to the terminal.
-
+sudo sh -c 'echo "chao" >> /etc/archivo_protegido'  # Runs a shell as root with sudo and appends the text "chao" to the protected file /etc/archivo_protegido.
