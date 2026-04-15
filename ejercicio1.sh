@@ -4,3 +4,7 @@ echo 'echo "Hola desde mi primer script"' >> hola.sh    #Appends the line echo "
 #This adds a command to the script so that, when it is executed, it prints Hola desde mi primer script on the screen.
 cat hola.sh #displays the contents of the file hola.sh in the terminal.
 ./hola.sh   #runs the script file from the current directory, executing the commands written inside it.
+ls -l hola.sh   #shows detailed information about the file, such as its permissions, owner, size, and modification date.
+chmod +x hola.sh    #gives execute permission to the file, allowing it to be run as a script.
+ls -l hola.sh
+./hola.sh   #now it executes
