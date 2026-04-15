@@ -24,4 +24,5 @@ echo "hola" | sudo tee /etc/archivo_protegido > /dev/null   #Writes "hola" to a 
 echo "hola" | sudo tee /etc/archivo_protegido   #Writes "hola" to a protected file using sudo and also prints it to the terminal.
 sudo sh -c 'echo "chao" >> /etc/archivo_protegido'  # Runs a shell as root with sudo and appends the text "chao" to the protected file /etc/archivo_protegido.
 sudo su - #enter root
-
+echo "$HOME"    #displays the value of the HOME environment variable
+echo '$HOME'    #Print literally $HOME
