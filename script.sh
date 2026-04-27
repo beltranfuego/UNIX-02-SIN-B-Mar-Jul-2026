@@ -42,3 +42,8 @@ sudo chown luna mi_archivo  #Changes the owner of mi_archivo to the user luna.
 sudo usermod -aG grupo_test $(whoami)       #Adds your current user to the group grupo_test.
 newgrp grupo_test       #Switches your current session to use grupo_test as the active group.
 chgrp grupo_test comun  #Changes the group ownership of comun to grupo_test.
+mkdir -p proyecto/sub   # -p  creates parent directories if they don’t exist
+touch proyecto/readme proyecto/sub/datos        #Creates two empty files in the specified locations.
+sudo chown -R luna:grupo_test proyecto      #Changes the owner to luna and the group to grupo_test for the entire project.
+#  -R → recursive (applies to everything inside)
+ls -lR proyecto     #Shows all files and directories inside proyecto with full details.
