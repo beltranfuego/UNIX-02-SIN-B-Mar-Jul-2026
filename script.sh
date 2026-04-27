@@ -39,3 +39,6 @@ sudo chown -R $(whoami) .   #Changes the ownership of all files and folders in t
 sudo setfacl -bnR .     #Removes all special/extended permissions (ACLs), leaving only standard permissions.
 sudo useradd -m -s /usr/bin/zsh luna        #Creates a new user named luna with a home directory and Zsh as the default shell.
 sudo chown luna mi_archivo  #Changes the owner of mi_archivo to the user luna.
+sudo usermod -aG grupo_test $(whoami)       #Adds your current user to the group grupo_test.
+newgrp grupo_test       #Switches your current session to use grupo_test as the active group.
+chgrp grupo_test comun  #Changes the group ownership of comun to grupo_test.
