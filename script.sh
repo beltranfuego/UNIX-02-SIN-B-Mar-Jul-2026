@@ -35,3 +35,7 @@ touch archivo2
 mkdir directorio2
 ls -l
 umask 077  #umask 077 sets a very restrictive permission mask.
+sudo chown -R $(whoami) .   #Changes the ownership of all files and folders in the current directory to your user.
+sudo setfacl -bnR .     #Removes all special/extended permissions (ACLs), leaving only standard permissions.
+sudo useradd -m -s /usr/bin/zsh luna        #Creates a new user named luna with a home directory and Zsh as the default shell.
+sudo chown luna mi_archivo  #Changes the owner of mi_archivo to the user luna.
