@@ -26,3 +26,4 @@ sudo sh -c 'echo "chao" >> /etc/archivo_protegido'  # Runs a shell as root with 
 sudo su - #enter root
 echo "$HOME"    #displays the value of the HOME environment variable
 echo '$HOME'    #Print literally $HOME
+umask       #umask controls default file and directory permissions by removing specific permissions automatically when they are created.
