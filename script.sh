@@ -27,3 +27,11 @@ sudo su - #enter root
 echo "$HOME"    #displays the value of the HOME environment variable
 echo '$HOME'    #Print literally $HOME
 umask       #umask controls default file and directory permissions by removing specific permissions automatically when they are created.
+touch archivo1      #Creates an empty file called archivo1 (or updates its timestamp if it already exists).
+mkdir directorio1   #Creates a directory (folder) called directorio1.
+ls -l       #Lists files and directories in detailed format (permissions, owner, size, etc.).
+umask 027       #Changes the permission mask so new files/directories are more restrictive.
+touch archivo2
+mkdir directorio2
+ls -l
+umask 077  #umask 077 sets a very restrictive permission mask.
