@@ -10,3 +10,4 @@ pwd     #It shows the current directory path you are in.  stands for “print wo
 cd      #It is used to move between directories in the filesystem.   stands for "change directory"
 cd ..       #The command cd .. moves you to the parent directory.
 cd ~        #The command cd ~ takes you to your home directory.
+-t      #The option -t in the ls command sorts files by their timestamp (modification time).
