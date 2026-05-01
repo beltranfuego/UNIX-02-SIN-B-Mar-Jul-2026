@@ -25,4 +25,4 @@ head        #Displays the first lines of a file. By default, it shows the first 
 tail   #Displays the last lines of a file. By default, it shows the first 10 lines.
 -n [number]         #Specifies the number of lines to show. Used with head or tail
 cp      #It is used to copy files or directories.
-move    #It is used to move or rename files and directories.
+mv    #It is used to move or rename files and directories.
