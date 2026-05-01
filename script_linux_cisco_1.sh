@@ -19,3 +19,4 @@ exit        #If you are inside another user (like after su), it returns you to t
 sl      #It displays a steam train animation in the terminal, steam locomotive
 sudo        #It allows a permitted user to run commands with elevated privileges (usually as root), super user do.
 chmod       #It is used to change file and directory permissions in Linux.
+chown       #It is used to change the owner and/or group of a file or directory.
