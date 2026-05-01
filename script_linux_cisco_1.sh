@@ -15,3 +15,4 @@ cd ~        #The command cd ~ takes you to your home directory.
 su -
 su -l       #all three switch user and load a full login environment (like a real login session, by default root).
 su --login
+exit        #If you are inside another user (like after su), it returns you to the previous user.
