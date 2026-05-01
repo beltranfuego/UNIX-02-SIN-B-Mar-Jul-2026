@@ -26,4 +26,4 @@ tail   #Displays the last lines of a file. By default, it shows the first 10 lin
 -n [number]         #Specifies the number of lines to show. Used with head or tail
 cp      #It is used to copy files or directories.
 mv    #It is used to move or rename files and directories.
-detailed    #It is used to copy and convert data from one place to another (files, disks, partitions).
+dd    #It is used to copy and convert data from one place to another (files, disks, partitions).
