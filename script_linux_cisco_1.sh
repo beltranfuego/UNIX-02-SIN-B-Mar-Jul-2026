@@ -24,3 +24,4 @@ cat     #It is used to display, combine, and create files.
 head        #Displays the first lines of a file. By default, it shows the first 10 lines.
 tail   #Displays the last lines of a file. By default, it shows the first 10 lines.
 -n [number]         #Specifies the number of lines to show. Used with head or tail
+cp      #It is used to copy files or directories.
