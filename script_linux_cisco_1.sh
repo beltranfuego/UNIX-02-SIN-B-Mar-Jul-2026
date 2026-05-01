@@ -11,3 +11,4 @@ cd      #It is used to move between directories in the filesystem.   stands for 
 cd ..       #The command cd .. moves you to the parent directory.
 cd ~        #The command cd ~ takes you to your home directory.
 -t      #The option -t in the ls command sorts files by their timestamp (modification time).
+-S      #The option -S in the ls command sorts files by their file size.
