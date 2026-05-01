@@ -21,3 +21,4 @@ sudo        #It allows a permitted user to run commands with elevated privileges
 chmod       #It is used to change file and directory permissions in Linux.
 chown       #It is used to change the owner and/or group of a file or directory.
 cat     #It is used to display, combine, and create files.
+head        #Displays the first lines of a file. By default, it shows the first 10 lines.
