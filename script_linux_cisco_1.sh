@@ -8,3 +8,4 @@ ls -r       #It shows the contents of a directory but reverses the sorting order
 -v      #means verbose (more detailed output)
 pwd     #It shows the current directory path you are in.  stands for “print working directory.”
 cd      #It is used to move between directories in the filesystem.   stands for "change directory"
+cd ..       #The command cd .. moves you to the parent directory.
