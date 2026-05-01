@@ -6,3 +6,4 @@ aptitude moo        #This is a hidden Easter egg inside Aptitude. Instead of doi
 ls -l       #The command ls -l lists files and directories in long format.
 ls -r       #It shows the contents of a directory but reverses the sorting order (for example, Z → A instead of A → Z).
 -v      #means verbose (more detailed output)
+pwd     #It shows the current directory path you are in.  stands for “print working directory.”
