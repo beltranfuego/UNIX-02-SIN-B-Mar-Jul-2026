@@ -7,3 +7,4 @@ ls -l       #The command ls -l lists files and directories in long format.
 ls -r       #It shows the contents of a directory but reverses the sorting order (for example, Z → A instead of A → Z).
 -v      #means verbose (more detailed output)
 pwd     #It shows the current directory path you are in.  stands for “print working directory.”
+cd      #It is used to move between directories in the filesystem.   stands for "change directory"
