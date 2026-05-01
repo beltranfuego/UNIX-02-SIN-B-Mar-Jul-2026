@@ -1,0 +1,1 @@
+ls ~/Documents      #The command ls ~/Documents lists the contents of the Documents folder in your home directory.
