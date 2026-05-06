@@ -44,3 +44,13 @@ id
 usermod -aG desarrolladores $USER       #we have to change $USER to root or $(whoami)
 usermod -aG diseño $USER                #the same
 
+# Now the ERROR: using usermod -G without -a
+
+usermod -G desarrolladores $USER
+
+# This removes all supplementary groups from the user
+# and leaves only the desarrolladores group.
+
+id $USER
+
+# The user lost all other supplementary groups.
