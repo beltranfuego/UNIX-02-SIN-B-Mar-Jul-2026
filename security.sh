@@ -58,3 +58,11 @@ id $USER
 #Restore
 usermod -aG diseno,marketing,grupo_temporal root
 
+# Prepare the practice scenario
+mkdir -p ~/lab_chgrp/{proyectos,reportes,scripts}
+
+# Create practice files
+touch ~/lab_chgrp/proyectos/app.py
+touch ~/lab_chgrp/proyectos/config.json
+touch ~/lab_chgrp/reportes/informe.txt
+touch ~/lab_chgrp/scripts/deploy.sh
