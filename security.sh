@@ -15,4 +15,12 @@ groupadd -g 2000 operaciones
 
 # Create a new system group called servicios_web
 groupadd --system servicios_web
-       
+
+# Search for the groups desarrolladores, operaciones, or servicios_web in /etc/group using extended regex
+grep -E "desarrolladores|operaciones|servicios_web" /etc/group
+
+# Search for the groups desarrolladores, operaciones, or servicios_web in /etc/group using basic regex
+grep "desarrolladores\|operaciones\|servicios_web" /etc/group           # \| means take not as a pipeline but as an or gate
+                                                                        # \ means "caracter de escape"
+
+groupadd --help         # We see the main options
