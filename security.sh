@@ -33,3 +33,14 @@ grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs
 # SYS_GID_MAX = 999
 # GID_MIN     = 1000
 # GID_MAX     = 60000
+
+#Check which groups the current user belongs to
+groups
+id
+
+# Add the current user to a group using usermod
+# -a means append, so the user keeps their current groups
+# -G specifies the supplementary group to add
+usermod -aG desarrolladores $USER       #we have to change $USER to root or $(whoami)
+usermod -aG diseño $USER                #the same
+
