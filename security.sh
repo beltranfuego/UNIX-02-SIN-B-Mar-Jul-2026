@@ -54,3 +54,7 @@ usermod -G desarrolladores $USER
 id $USER
 
 # The user lost all other supplementary groups.
+
+#Restore
+usermod -aG diseno,marketing,grupo_temporal root
+
