@@ -24,3 +24,12 @@ grep "desarrolladores\|operaciones\|servicios_web" /etc/group           # \| mea
                                                                         # \ means "caracter de escape"
 
 groupadd --help         # We see the main options
+
+# Check the GID ranges configured in the system
+grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs
+# System groups usually have a GID lower than the minimum regular user GID.
+# On Ubuntu/Debian, it is typically:
+# SYS_GID_MIN = 100
+# SYS_GID_MAX = 999
+# GID_MIN     = 1000
+# GID_MAX     = 60000
