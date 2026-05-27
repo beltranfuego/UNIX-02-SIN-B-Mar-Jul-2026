@@ -15,3 +15,8 @@ mkdir -p ~/proyecto_dev/src         # Create a project folder with src inside
 ls -la ~/                           # List home directory contents
 echo "Restored group: $(id -gn)"     # Display the current group after exiting newgrp
 ls -la ~/antes_de_newgrp.txt ~/dentro_de_newgrp.txt    # Compare both files to verify their owner and group
+echo "PID del shell actual: $$"       #Display the current shell process ID inside desarrolladores
+echo "PID dentro de newgrp: $$"       # Display the current shell process ID inside newgrp
+groupadd grupo_restringido
+gpasswd grupo_restringido           #we put a password to enter the group
+newgrp grupo_restringido
