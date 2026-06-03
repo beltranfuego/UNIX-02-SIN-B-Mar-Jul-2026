@@ -6,3 +6,10 @@ touch test && touch test123
 (ls; ps; whoami)
 
 lzl || echo "the lzl command failed"
+
+ls -l / &> stdout_and_stderr.txt
+
+ls -l / 1> stdout.txt 2> stderr.txt
+
+lzl 2> error.txt
+cat error.txt
