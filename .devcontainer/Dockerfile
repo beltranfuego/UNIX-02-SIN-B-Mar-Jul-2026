@@ -88,7 +88,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # === Editores de texto y shells (intérpretes de comandos) ===
     neovim \
     vim \
-    zsh \
+    bash \
     bash-completion \
     \
     # === Herramientas de 4ta generación ===
@@ -188,7 +188,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Por defecto Docker usa /bin/sh (un shell más limitado y antiguo). Lo
 # cambiamos a bash por si agregamos más instrucciones con sintaxis
 # moderna (arrays, [[ ]], etc.).
-SHELL ["/bin/zsh", "-c"]
+SHELL ["/bin/bash", "-c"]
 
 
 # ----------------------------------------------------------------------------
@@ -219,13 +219,21 @@ RUN git config --system --add safe.directory '*' \
 # definida para que la imagen sea usable también con Docker puro.
 # Prompt del curso para bash
 
-RUN cat > /root/.zshrc <<'EOF'
-PROMPT='%F{cyan}[Arthur_Beltran]%f %F{yellow}%1~%f %(?.%F{green}✓.%F{red}✗ %?)%f %# '
+RUN cat > /root/.bashrc <<'EOF'
+
+# ===== Prompt del curso =====
+__set_prompt() {
+    local ec=$?
+    local mark
+    if [ $ec -eq 0 ]; then
+        mark='\[\e[32m\]✓\[\e[0m\]'
+    else
+        mark="\[\e[31m\]✗ $ec\[\e[0m\]"
+    fi
+    PS1="\[\e[36m\][Arthur_Beltran]\[\e[0m\] \[\e[33m\]\W\[\e[0m\] $mark \$ "
+}
+PROMPT_COMMAND=__set_prompt
 EOF
-
-CMD ["/bin/zsh"]
-
-
-
+CMD ["/bin/bash"]
 
 
