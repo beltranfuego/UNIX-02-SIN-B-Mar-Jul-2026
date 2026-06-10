@@ -197,10 +197,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
  \
- # --- Limpieza final: reducir el tamaño de la imagen ---
- # apt deja archivos de caché que ya no necesitamos después de instalar.
- # Borrarlos aquí (en el mismo RUN) hace la capa final más pequeña.
- # Si los borráramos en otro RUN, seguirían ocupando en la capa anterior.
+ # Package managers leave cache files after installation.
+# These files are removed to reduce the final image size.
+#
+# Cleanup is performed in the same RUN instruction so unnecessary files
+# are not preserved in previous image layers. (Black Hat Bash Ch.3)
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
