@@ -56,24 +56,27 @@ RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
     | debconf-set-selections
 
 
-# ----------------------------------------------------------------------------
-# RUN: ejecutar comandos durante la construcción de la imagen
-# ----------------------------------------------------------------------------
-# Aquí instalamos TODO el software del curso en un solo RUN.
+# RUN executes commands while the image is being built.
 #
-#   apt-get update          -> actualiza la lista de paquetes disponibles
-#   apt-get install         -> descarga e instala los paquetes listados
-#     -y                    -> responde "sí" automáticamente
-#     --no-install-recommends -> instala SOLO lo esencial (no los extras
-#                                sugeridos). Ahorra cientos de MB.
+# apt-get update downloads the latest package index information from
+# configured repositories.
 #
-# ¿Por qué un solo RUN gigante y no 10 RUN pequeños?
-# Porque CADA RUN crea una capa nueva en la imagen. Menos capas = imagen
-# más pequeña, más rápida de construir y de descargar.
+# apt-get install downloads and installs the requested software packages.
 #
-# El "&&" encadena comandos: ejecuta el siguiente SOLO SI el anterior
-# terminó bien. Si algo falla, el build se detiene con error (que es lo
-# que queremos: mejor un error claro que una imagen rota).
+# The -y option automatically answers yes to installation prompts.
+#
+# --no-install-recommends installs only required dependencies and avoids
+# optional packages that would increase image size unnecessarily.
+#
+# Commands are chained with && so that each command executes only if the
+# previous one succeeds. This helps detect build errors early.
+# (Black Hat Bash Ch.1)
+#
+# Package names are split across multiple lines using backslashes to
+# improve readability.
+#
+# Using one large RUN instruction reduces the number of Docker layers,
+# resulting in a smaller and more efficient image. (Black Hat Bash Ch.3)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     \
     # === Editores de texto y shells (intérpretes de comandos) ===
