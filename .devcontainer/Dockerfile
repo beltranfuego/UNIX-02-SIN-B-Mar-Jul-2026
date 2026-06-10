@@ -79,27 +79,36 @@ RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
 # resulting in a smaller and more efficient image. (Black Hat Bash Ch.3)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     \
-    # === Editores de texto y shells (intérpretes de comandos) ===
+    # === Text editors and command interpreters ===
+    # Neovim and Vim are terminal-based text editors commonly used in Linux.
+    # Bash is the shell used throughout the course for scripting and command
+    # execution. bash-completion provides automatic command and filename
+    # completion to improve productivity.
     neovim \
     vim \
     bash \
     bash-completion \
     \
-    # === Herramientas de 4ta generación ===
-    # Estas son las protagonistas de las Unidades 2, 3 y 4:
+    # === Text processing and scripting tools ===
+    # These tools are heavily used in shell scripting and automation.
+    # grep searches for patterns in text files.
+    # sed performs stream editing and text transformations.
+    # gawk processes structured text and generates reports.
+    # (Black Hat Bash Ch.2)
     perl \
     make \
     gawk \
     sed \
     grep \
     \
-    # === Utilidades básicas de UNIX ===
-    # coreutils trae cat, ls, head, tail, sort, cut, tr, etc.
-    # findutils trae find y xargs.
-    # procps trae ps, top, kill (gestión de procesos).
-    # less = paginador para leer archivos largos.
-    # tree = muestra directorios como árbol.
-    # jq = procesa JSON desde la línea de comandos.
+    # === Core UNIX utilities ===
+    # coreutils provides essential commands such as ls, cat, sort, head,
+    # tail, cut and tr.
+    # findutils includes tools such as find and xargs.
+    # procps provides process management commands including ps, top and kill.
+    # less allows efficient viewing of large files.
+    # tree displays directory structures in a hierarchical format.
+    # jq processes and filters JSON data from the command line.
     coreutils \
     findutils \
     procps \
@@ -107,15 +116,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     tree \
     jq \
     \
-    # === Páginas de manual (comando `man`) ===
-    # La imagen base de Kali viene sin documentación para
-    # ahorrar espacio. La reinstalamos porque en el curso "man bash" o
-    # "man grep" es material de consulta obligada.
+    # === Manual page documentation ===
+    # man-db and the manual page packages provide built-in documentation
+    # for commands and utilities. Accessing documentation with "man" is
+    # an important Unix skill.
     man-db \
     manpages \
     manpages-posix \
     \
-    # === Red básica y utilidades de descarga ===
+    # === Download and repository tools ===
+    # curl and wget retrieve content from remote servers.
+    # git provides distributed version control.
+    # git-lfs enables support for large files stored outside the normal
+    # Git object database.
+    # ca-certificates provides trusted certificates for HTTPS connections.
+    # locales adds language and localization support.
     curl \
     wget \
     git \
@@ -123,22 +138,31 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     locales \
     \
-    # === Linter (revisor automático de errores) para scripts Bash ===
+    # === Shell script analysis ===
+    # shellcheck analyzes shell scripts and detects common mistakes,
+    # portability issues and unsafe scripting practices.
     shellcheck \
     \
-    # === Reconocimiento y escaneo de red ===
-    # nmap = el escáner de puertos más famoso.
-    # masscan = escaneo masivo de rangos grandes de IPs.
+    # === Network reconnaissance ===
+    # nmap is widely used for host discovery and port scanning.
+    # masscan performs very fast large-scale network scans  
     nmap \
     masscan \
     \
-    # === Captura y análisis de paquetes de red ===
-    # tcpdump = capturador clásico por terminal.
-    # tshark = versión de terminal de Wireshark.
+    # === Packet capture and traffic analysis ===
+    # tcpdump captures packets directly from network interfaces.
+    # tshark provides command-line packet analysis similar to Wireshark.
     tcpdump \
     tshark \
     \
-    # === Utilidades de red variadas ===
+    # === Networking utilities ===
+    # netcat supports raw network communication and troubleshooting.
+    # socat connects sockets, files and processes.
+    # dnsutils provides DNS query tools.
+    # whois retrieves domain registration information.
+    # traceroute and mtr help diagnose network connectivity issues.
+    # iproute2, net-tools and iputils-ping provide common networking
+    # administration and diagnostic commands.
     netcat-traditional \
     socat \
     dnsutils \
@@ -149,17 +173,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     net-tools \
     iputils-ping \
     \
-    # === Anonimato: Tor y similares ===
-    # tor = cliente de la red Tor.
-    # torsocks = "envoltorio" que hace pasar cualquier comando por Tor.
-    # proxychains4 = encadena múltiples proxies.
-    # obfs4proxy = ofusca el tráfico de Tor para evadir bloqueos.
+    # === Privacy and proxy tools ===
+    # tor connects traffic through the Tor anonymity network.
+    # torsocks forces applications to use Tor.
+    # proxychains4 routes applications through proxy servers.
+    # obfs4proxy helps disguise Tor traffic when filtering is present.  
     tor \
     torsocks \
     proxychains4 \
     obfs4proxy \
     \
-    # === Cliente HTTP más legible que curl para aprender ===
+    # === User-friendly HTTP client ===
+    # httpie provides a more readable interface for learning and testing
+    # HTTP requests from the command line.
     httpie \
     \
  # --- Después de instalar, activamos el idioma español ---
