@@ -43,13 +43,15 @@ ENV DEBIAN_FRONTEND=noninteractive \
     TERM=xterm-256color
 
 
-# ----------------------------------------------------------------------------
-# Pre-respuesta a una pregunta interactiva de Wireshark
-# ----------------------------------------------------------------------------
-# Wireshark/tshark PREGUNTA durante su instalación si los usuarios
-# normales (no-root) deben poder capturar paquetes. Como en el contenedor
-# siempre somos root, respondemos "false" POR ADELANTADO usando
-# debconf-set-selections para que no detenga el build esperando input.
+# Some packages request configuration choices during installation.
+# debconf-set-selections allows predefined answers to be supplied before
+# installation starts, preventing the build from stopping for input.
+#
+# The pipe operator (|) sends the output of echo directly into
+# debconf-set-selections. (Black Hat Bash Ch.1)
+#
+# Wireshark normally asks whether packet capture privileges should be
+# granted to non-root users. The answer is configured in advance here.
 RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
     | debconf-set-selections
 
