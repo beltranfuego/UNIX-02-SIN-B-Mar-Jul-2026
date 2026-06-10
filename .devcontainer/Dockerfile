@@ -232,13 +232,19 @@ RUN git config --system --add safe.directory '*' \
  && git config --system pull.rebase false \
  && git lfs install --system
 
-# ----------------------------------------------------------------------------
-# CMD: comando que se ejecuta por defecto al arrancar el contenedor
-# ----------------------------------------------------------------------------
-# Lanza una shell bash interactiva. Codespaces la sobrescribe con su
-# propia terminal integrada de VS Code, pero es buena práctica dejarla
-# definida para que la imagen sea usable también con Docker puro.
-# Prompt del curso para bash
+# A here-document (heredoc) allows multiple lines of text to be passed
+# directly into a command. The EOF marker defines where the text block
+# begins and ends. The > operator redirects the generated content into
+# /root/.bashrc. (Redirection — BHB Ch.1)
+#
+# This configuration creates a custom Bash prompt for the course.
+# The function checks the exit code of the previously executed command
+# using the special variable $?. A green check mark is displayed when
+# the command succeeds, while a red X and the exit code are shown when
+# a command fails. (Exit codes — BHB Ch.1)
+#
+# PS1 defines the appearance of the Bash prompt, including colors,
+# the current directory, and command status information.
 
 RUN cat > /root/.bashrc <<'EOF'
 
@@ -255,6 +261,11 @@ __set_prompt() {
 }
 PROMPT_COMMAND=__set_prompt
 EOF
+
+# RUN instructions execute while the image is being built.
+# CMD defines the default command that runs when a container starts.
+# In this image, Bash launches automatically when the container is created.
+
 CMD ["/bin/bash"]
 
 
