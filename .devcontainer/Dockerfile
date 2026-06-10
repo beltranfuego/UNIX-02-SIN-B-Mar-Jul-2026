@@ -1,28 +1,23 @@
-# ============================================================================
-#  Dockerfile — "receta" para construir la imagen del curso
-# ============================================================================
-#  Un Dockerfile es un archivo de texto con instrucciones paso a paso que
-#  Docker (o Codespaces) lee de arriba hacia abajo para fabricar una
-#  "imagen". Una imagen es como un molde congelado de un sistema Linux
-#  listo para usar; cada vez que abres el Codespace, se crea un
-#  "contenedor" a partir de ese molde.
+# Docker uses this file as a build recipe to create a container image.
+# An image is a reusable template that contains an operating system,
+# installed software, configuration files, and default settings.
 #
-#  Analogía: la imagen es el PLANO, el contenedor es la CASA construida
-#  con ese plano. Puedes construir muchas casas iguales a partir de un
-#  solo plano, y si destruyes una casa el plano sigue intacto.
+# Containers are created from images. Multiple containers can be created
+# from the same image while keeping the original image unchanged.
 #
-#  Cada instrucción (FROM, ENV, RUN...) crea una "capa". Docker guarda
-#  esas capas en caché: si no cambias las primeras líneas, no las
-#  reconstruye y el siguiente build es casi instantáneo.
-# ============================================================================
+# Docker processes instructions from top to bottom. Each instruction creates
+# a layer that can be cached and reused in future builds. Keeping stable
+# instructions near the top improves build performance because unchanged
+# layers do not need to be rebuilt. (Black Hat Bash Ch.3)
 
 
-# ----------------------------------------------------------------------------
-# FROM: imagen base sobre la que vamos a construir
-# ----------------------------------------------------------------------------
-# En lugar de partir de cero, partimos de la imagen oficial de Kali Linux
-# en su versión "rolling" (actualización continua, siempre al día).
-# Todo lo que instalemos más abajo se apila ENCIMA de esta base.
+# Use Kali Linux Rolling as the base image for the course environment.
+# A base image provides the initial filesystem and operating system on
+# which all later instructions are built.
+#
+# Kali Linux is commonly used for networking, system administration,
+# scripting, and security-related exercises, making it suitable for
+# the course environment. (Black Hat Bash Ch.3)
 FROM kalilinux/kali-rolling:latest
 
 
