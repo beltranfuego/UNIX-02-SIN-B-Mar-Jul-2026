@@ -188,9 +188,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # HTTP requests from the command line.
     httpie \
     \
- # --- Después de instalar, activamos el idioma español ---
- # sed busca "# es_ES.UTF-8" en /etc/locale.gen y le quita el "#" para
- # activar esa línea. Luego locale-gen compila los archivos de idioma.
+ # sed -i edits a file in place without creating a separate output file.
+# The command enables the Spanish UTF-8 locale by uncommenting its entry
+# inside /etc/locale.gen.
+#
+# locale-gen generates the locale files required by the operating system.
+# (Black Hat Bash Ch.2)
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
  \
