@@ -206,21 +206,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/*
 
 
-# ----------------------------------------------------------------------------
-# SHELL: qué intérprete usar en los siguientes RUN
-# ----------------------------------------------------------------------------
-# Por defecto Docker usa /bin/sh (un shell más limitado y antiguo). Lo
-# cambiamos a bash por si agregamos más instrucciones con sintaxis
-# moderna (arrays, [[ ]], etc.).
+# Docker normally uses a default shell for RUN instructions.
+# This image explicitly uses bash for future RUN commands, providing
+# consistent shell behavior and access to bash features.
 SHELL ["/bin/bash", "-c"]
 
 
-# ----------------------------------------------------------------------------
-# WORKDIR: directorio de trabajo al entrar al contenedor
-# ----------------------------------------------------------------------------
-# Codespaces siempre monta el código del repositorio en
-# /workspaces/<nombre-del-repo>. Establecer /workspaces aquí hace que las
-# terminales se abran cerca de nuestros archivos del curso.
+# WORKDIR defines the default working directory used by later commands
+# and interactive sessions. It behaves similarly to running cd before
+# executing commands.
 WORKDIR /workspaces
 
 # Configuración de Git para el contenedor:
