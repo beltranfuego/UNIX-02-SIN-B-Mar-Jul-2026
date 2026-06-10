@@ -8,7 +8,7 @@
 # Docker processes instructions from top to bottom. Each instruction creates
 # a layer that can be cached and reused in future builds. Keeping stable
 # instructions near the top improves build performance because unchanged
-# layers do not need to be rebuilt. (Black Hat Bash Ch.3)
+# layers do not need to be rebuilt. (Docker images and containers — BHB Ch.3)
 
 
 # Use Kali Linux Rolling as the base image for the course environment.
@@ -17,13 +17,13 @@
 #
 # Kali Linux is commonly used for networking, system administration,
 # scripting, and security-related exercises, making it suitable for
-# the course environment. (Black Hat Bash Ch.3)
+# the course environment. (Kali Linux lab environment — BHB Ch.3)
 FROM kalilinux/kali-rolling:latest
 
 
 # Environment variables provide configuration values that can be accessed
 # by programs running inside the container. They are commonly used to
-# control software behavior without modifying source code. (Black Hat Bash Ch.1)
+# control software behavior without modifying source code. (Environment variables — BHB Ch.1)
 #
 # DEBIAN_FRONTEND=noninteractive prevents package installers from waiting
 # for user input during automated builds.
@@ -48,7 +48,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 # installation starts, preventing the build from stopping for input.
 #
 # The pipe operator (|) sends the output of echo directly into
-# debconf-set-selections. (Black Hat Bash Ch.1)
+# debconf-set-selections. (Pipes and redirection — BHB Ch.1)
 #
 # Wireshark normally asks whether packet capture privileges should be
 # granted to non-root users. The answer is configured in advance here.
@@ -70,13 +70,13 @@ RUN echo "wireshark-common wireshark-common/install-setuid boolean false" \
 #
 # Commands are chained with && so that each command executes only if the
 # previous one succeeds. This helps detect build errors early.
-# (Black Hat Bash Ch.1)
+# (Exit codes and flow control — BHB Ch.1)
 #
 # Package names are split across multiple lines using backslashes to
 # improve readability.
 #
 # Using one large RUN instruction reduces the number of Docker layers,
-# resulting in a smaller and more efficient image. (Black Hat Bash Ch.3)
+# resulting in a smaller and more efficient image. (Docker image layers — BHB Ch.3)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     \
     # === Text editors and command interpreters ===
@@ -94,7 +94,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     # grep searches for patterns in text files.
     # sed performs stream editing and text transformations.
     # gawk processes structured text and generates reports.
-    # (Black Hat Bash Ch.2)
+    # (Text processing tools — BHB Ch.2)
     perl \
     make \
     gawk \
@@ -193,7 +193,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # inside /etc/locale.gen.
 #
 # locale-gen generates the locale files required by the operating system.
-# (Black Hat Bash Ch.2)
+# (sed stream editor — BHB Ch.2)
  && sed -i 's/# es_ES.UTF-8/es_ES.UTF-8/' /etc/locale.gen \
  && locale-gen \
  \
@@ -201,7 +201,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # These files are removed to reduce the final image size.
 #
 # Cleanup is performed in the same RUN instruction so unnecessary files
-# are not preserved in previous image layers. (Black Hat Bash Ch.3)
+# are not preserved in previous image layers. (Container optimization — BHB Ch.3)
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
