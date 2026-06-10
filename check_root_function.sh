@@ -21,3 +21,6 @@ else
   # If the function returns 1 (false), the user is not root
   echo "User is not root!"
 fi
+
+#adduser darwin        
+#su - darwin
