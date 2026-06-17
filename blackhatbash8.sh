@@ -23,3 +23,7 @@ ps -ef | grep sleep
 #root       21148    2258  0 13:10 pts/0    00:00:00 sleep 100
 #root       21396       1  0 13:10 ?        00:00:00 sleep 1
 #root       21408    2258  0 13:10 pts/0    00:00:00 grep sleep
+fg %1
+#sleep 100
+bg %1
+[1]+ sleep 100 &
