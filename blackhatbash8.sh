@@ -16,3 +16,4 @@ sed '1d' newlog.txt > newlogd.txt
 sed '$d' newlog.txt > newlogl.txt
 sed '5,7d' newlog.txt > newlog57.txt
 sed -n '2,15 p' log.txt
+sed -i '1d' log.txt
