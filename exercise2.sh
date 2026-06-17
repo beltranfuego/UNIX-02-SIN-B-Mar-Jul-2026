@@ -238,3 +238,5 @@ echo "Outside class      : $((TOTAL_COMMITS - CLASS_COMMITS))"
 echo "Percentage         : ${PERCENT}%"
 echo "Schedule score     : ${CLASS_SCORE}/35"
 echo
+
+sleep 100 &
