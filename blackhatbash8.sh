@@ -13,3 +13,5 @@ grep "Mozilla" newlog.txt   #the same
 grep "Godzilla" newlog.txt
 sed 's/ //g' log.txt
 sed '1d' newlog.txt > newlogd.txt
+sed '$d' newlog.txt > newlogl.txt
+
